@@ -1,0 +1,16 @@
+[project]
+name = "synthesis_openserv"
+version = "0.1.0"
+description = "A load-bearing service fabric for discovery, scheduling, execution receipts, and build-story outputs across the whole swarm."
+readme = "README.md"
+requires-python = ">=3.13"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ty.terminal]
+error-on-warning = true
+
+[tool.ty.environment]
+python-version = "3.13"
