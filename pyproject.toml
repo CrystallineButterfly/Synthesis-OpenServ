@@ -1,9 +1,13 @@
+
 [project]
 name = "synthesis_openserv"
 version = "0.1.0"
 description = "A load-bearing service fabric for discovery, scheduling, execution receipts, and build-story outputs across the whole swarm."
 readme = "README.md"
 requires-python = ">=3.13"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
 
 [tool.ruff]
 line-length = 100

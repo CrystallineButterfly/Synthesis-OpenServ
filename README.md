@@ -1,117 +1,91 @@
 # OpenImpact Dispatcher
 
-        **Repo:** `Synthesis-OpenServ`  
-        **Primary track:** OpenServ  
-        **Submission hold:** wait for human approval before registration or live submission.
+- **Repo:** `Synthesis-OpenServ`
+- **Primary track:** OpenServ
+- **Category:** orchestration
+- **Submission status:** implementation ready, waiting for credentials and TxIDs.
 
-        A load-bearing service fabric for discovery, scheduling, execution receipts, and build-story outputs across the whole swarm.
+A load-bearing service fabric for discovery, scheduling, execution receipts, and build-story outputs across the whole swarm.
 
-        ## Selected concept
+## Selected concept
 
-        A coordinator exposes load-bearing service interfaces for discovery, scheduling, execution receipts, and build-story outputs. The contract layer stores job policies and completion receipts while Python workers route tasks to track-specific adapters.
+A coordinator exposes load-bearing service interfaces for discovery, scheduling, execution receipts, and build-story outputs. The contract layer stores job policies and completion receipts while Python workers route tasks to track-specific adapters.
 
-        ## Idea set
+## Idea shortlist
 
-        1. Autonomous Public-Goods Dispatch
+1. Autonomous Public-Goods Dispatch
 2. x402 Agentic Service Hub
 3. ERC-8004-backed DeFi Ops Queue
 
-        ## Prize overlap targets
+## Partners covered
 
-        - Octant
-- Filecoin
-- ERC-8004 Receipts
-- Olas
-- Uniswap Agentic Finance
-- Markee
+OpenServ, Octant, Filecoin, ERC-8004 Receipts, Olas, Uniswap, Markee
 
-        ## Architecture
+## Architecture
 
-        ```mermaid
-        flowchart TD
-    Signals[OpenServ signals] --> Discover[Discover]
-    Discover --> Plan[Plan bounded action]
-    Plan --> DryRun[Dry run + policy check]
-    DryRun --> Guard[OpenServJobBoard]
-    Guard --> Execute[Execute when live mode is enabled]
-    Execute --> Verify[Verify proofs + receipts]
-    Verify --> Persist[Write agent_log.json + submission snippet]
-    Persist --> Storage[Store proof plan for Filecoin / receipts]
-        ```
+```mermaid
+flowchart TD
+    Signals[Discover signals]
+    Planner[Agent runtime]
+    DryRun[Dry-run artifact]
+    Contract[OpenServJobBoard policy contract]
+    Verify[Verify and render submission]
+    Signals --> Planner --> DryRun --> Contract --> Verify
+    Contract --> openserv[OpenServ]
+    Contract --> octant[Octant]
+    Contract --> filecoin[Filecoin]
+    Contract --> erc_8004_receipts[ERC-8004 Receipts]
+    Contract --> olas[Olas]
+    Contract --> uniswap[Uniswap]
+```
 
-        ## Repo structure
+## Repository layout
 
-        ```text
-        Synthesis-OpenServ/
-├── README.md
-├── LICENSE
-├── .env.example
-├── .gitignore
-├── agent.json
-├── agent_log.json
-├── pyproject.toml
-├── Makefile
-├── docs/
-│   ├── architecture.mmd
-│   ├── demo_video_script.md
-│   └── security.md
-├── src/
-│   └── OpenServJobBoard.sol
-├── script/
-│   └── Deploy.s.sol
-├── agents/
-│   ├── __init__.py
-│   └── openimpact_dispatcher.py
-├── scripts/
-│   ├── run_agent.py
-│   └── plan_live_demo.py
-├── submissions/
-│   └── synthesis.md
-└── tests/
-    └── test_project_context.py
-        ```
+- `src/`: shared policy contracts plus the repo-specific wrapper contract.
+- `script/`: Foundry deployment entrypoint.
+- `agents/`: Python runtime, partner adapters, and project metadata.
+- `scripts/`: CLI utilities for running the loop and rendering submissions.
+- `docs/`: architecture, credentials, demo script, and security notes.
+- `submissions/`: generated `synthesis.md` snippet for this repo.
 
-        ## Tech stack
+## Action catalog
 
-        Solidity 0.8.24 skeleton, Python 3.13 standard library, JSON manifests, Foundry-style layout, MIT license
+| Action | Partner | Purpose | Max USD | Sensitivity |
+| --- | --- | --- | --- | --- |
+| `openserv_job_dispatch` | OpenServ | Use OpenServ for a bounded action in this repo. | $10 | medium |
+| `octant_signal_publish` | Octant | Use Octant for a bounded action in this repo. | $25 | medium |
+| `filecoin_proof_store` | Filecoin | Use Filecoin for a bounded action in this repo. | $20 | medium |
+| `erc_8004_receipts_receipt_anchor` | ERC-8004 Receipts | Use ERC-8004 Receipts for a bounded action in this repo. | $1 | medium |
+| `olas_market_hire` | Olas | Use Olas for a bounded action in this repo. | $20 | medium |
+| `uniswap_quote_route` | Uniswap | Use Uniswap for a bounded action in this repo. | $220 | medium |
+| `markee_repo_message` | Markee | Use Markee for a bounded action in this repo. | $5 | low |
 
-        ## Security guardrails
+## Commands
 
-        - principal and spend policies are separated by design
-        - whitelist, cap, and cooldown checks gate every action
-        - dry-run hashes are recorded before any live execution path
-        - compute budgets are explicit and live mode is opt-in
-        - secrets are loaded from environment variables only
-        - structured logs are appended for every discover-plan-execute-verify step
+```bash
+python3 -m unittest discover -s tests
+forge test
+python3 scripts/run_agent.py
+python3 scripts/plan_live_demo.py
+python3 scripts/render_submission.py
+```
 
-        ## Autonomy loop
+## Credentials
 
-        1. Discover candidate signals and external state.
-2. Plan an action bundle with explicit budget, target, and purpose.
-3. Run a dry-run check and policy validation before any execution path.
-4. Execute only when live mode, wallets, and credentials are supplied.
-5. Verify receipts, proofs, and notes, then append structured logs.
+| Partner | Variables | Docs |
+| --- | --- | --- |
+| OpenServ | OPENSERV_API_KEY, OPENSERV_AGENT_URL | https://docs.openserv.ai/ |
+| Octant | OCTANT_SIGNAL_URL | https://octant.app/ |
+| Filecoin | FILECOIN_API_TOKEN, FILECOIN_UPLOAD_URL | https://docs.filecoin.cloud/ |
+| ERC-8004 Receipts | RPC_URL | https://eips.ethereum.org/EIPS/eip-8004 |
+| Olas | OLAS_API_KEY, OLAS_REQUEST_URL | https://docs.olas.network/ |
+| Uniswap | UNISWAP_API_KEY, UNISWAP_QUOTE_URL | https://developers.uniswap.org/ |
+| Markee | MARKEE_API_KEY, MARKEE_MESSAGE_URL | https://markee.xyz/ |
 
-        ## Local MVP status
+## Live demo plan
 
-        - [x] README, manifests, and security notes created
-        - [x] contract and agent-loop skeletons created
-        - [x] local git repository initialized with an initial commit
-        - [ ] operator wallet addresses attached
-        - [ ] real API keys added through `.env`
-        - [ ] live TxIDs recorded
-        - [ ] registration and submission executed
-
-        ## Live demo and TxID plan
-
-        1. load real credentials into `.env`
-        2. run `python3 scripts/plan_live_demo.py` to print the checklist
-        3. replace placeholder wallet fields in `agent.json`
-        4. enable `LIVE_MODE=true` for controlled execution
-        5. record resulting TxIDs and paste them into `submissions/synthesis.md`
-
-        ## Why this ranks first
-
-        This concept ranks highest because it overlaps Octant, Filecoin, ERC-8004 Receipts while keeping the
-        execution envelope explicit, dry-run-first, and honest about what still needs
-        real credentials before anything touches a chain.
+1. Copy .env.example to .env and fill the required keys.
+2. Deploy the contract with forge script script/Deploy.s.sol --broadcast for OpenServJobBoard.
+3. Run python3 scripts/run_agent.py to produce a dry run for openimpact_dispatcher.
+4. Set LIVE_MODE=true and rerun python3 scripts/run_agent.py with real credentials.
+5. Run python3 scripts/render_submission.py and attach TxIDs plus repo links.
