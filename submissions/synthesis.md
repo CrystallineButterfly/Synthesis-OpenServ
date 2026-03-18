@@ -1,6 +1,6 @@
 # OpenImpact Dispatcher
 
-- **Repo:** https://github.com/CrystallineButterfly/Synthesis-OpenServ
+- **Repo:** TODO_GITHUB_URL/Synthesis-OpenServ
 - **Primary track:** OpenServ
 - **Overlap targets:** Octant, Filecoin, ERC-8004 Receipts, Olas, Uniswap Agentic Finance, Markee
 - **Primary contract:** OpenServJobBoard
@@ -18,10 +18,10 @@ A load-bearing service fabric for discovery, scheduling, execution receipts, and
   "status": "verified",
   "project_name": "OpenImpact Dispatcher",
   "track": "OpenServ",
-  "plan_id": "0x37bd5253cb614fd60abf1cc66b6f774a772f1ce32c120d9eb887a348d8c6c79f",
-  "simulation_hash": "0x2cd24a915300714f99728e0b6eab508e292c96221ff37fef7a1d0e37499bad15",
+  "plan_id": "0x32b772d7f1f15bcd46f50d5a89f2930f14c8ecac7fb460d1c257a99b21cfc7f3",
+  "simulation_hash": "0x4e7d4590297f30664111c8b8850dda86f944607e46088f6212f89f33bb0bcce5",
   "execution_status": "awaiting_credentials",
   "tx_ids": [],
-  "created_at": "2026-03-18T21:44:10+00:00"
+  "created_at": "2026-03-18T23:01:26+00:00"
 }
 ```
