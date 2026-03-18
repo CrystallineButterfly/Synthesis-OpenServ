@@ -1,15 +1,25 @@
 # OpenImpact Dispatcher
 
-- **Repo:** `Synthesis-OpenServ`
+- **Repo:** [Synthesis-OpenServ](https://github.com/CrystallineButterfly/Synthesis-OpenServ)
 - **Primary track:** OpenServ
 - **Category:** orchestration
+- **Primary contract:** `OpenServJobBoard`
+- **Primary module:** `openimpact_dispatcher`
 - **Submission status:** implementation ready, waiting for credentials and TxIDs.
+
+## What this repo does
 
 A load-bearing service fabric for discovery, scheduling, execution receipts, and build-story outputs across the whole swarm.
 
-## Selected concept
+## Why this build matters
 
 A coordinator exposes load-bearing service interfaces for discovery, scheduling, execution receipts, and build-story outputs. The contract layer stores job policies and completion receipts while Python workers route tasks to track-specific adapters.
+
+## Submission fit
+
+- **Primary track:** OpenServ
+- **Overlap targets:** Octant, Filecoin, ERC-8004 Receipts, Olas, Uniswap Agentic Finance, Markee
+- **Partners covered:** OpenServ, Octant, Filecoin, ERC-8004 Receipts, Olas, Uniswap, Markee
 
 ## Idea shortlist
 
@@ -17,11 +27,7 @@ A coordinator exposes load-bearing service interfaces for discovery, scheduling,
 2. x402 Agentic Service Hub
 3. ERC-8004-backed DeFi Ops Queue
 
-## Partners covered
-
-OpenServ, Octant, Filecoin, ERC-8004 Receipts, Olas, Uniswap, Markee
-
-## Architecture
+## System graph
 
 ```mermaid
 flowchart TD
@@ -39,14 +45,36 @@ flowchart TD
     Contract --> uniswap[Uniswap]
 ```
 
-## Repository layout
+## Repository contents
 
-- `src/`: shared policy contracts plus the repo-specific wrapper contract.
-- `script/`: Foundry deployment entrypoint.
-- `agents/`: Python runtime, partner adapters, and project metadata.
-- `scripts/`: CLI utilities for running the loop and rendering submissions.
-- `docs/`: architecture, credentials, demo script, and security notes.
-- `submissions/`: generated `synthesis.md` snippet for this repo.
+| Path | What it contains |
+| --- | --- |
+| `src/` | Shared policy contracts plus the repo-specific wrapper contract. |
+| `script/Deploy.s.sol` | Foundry deployment entrypoint for the policy contract. |
+| `agents/` | Python runtime, project spec, env handling, and partner adapters. |
+| `scripts/` | Terminal entrypoints for run, demo planning, and submission rendering. |
+| `docs/` | Architecture, credentials, security notes, and demo steps. |
+| `submissions/` | Generated `synthesis.md` snippet for this repo. |
+| `test/` | Foundry tests for the Solidity control layer. |
+| `tests/` | Python tests for runtime and project context. |
+| `agent.json` | Submission-facing agent manifest. |
+| `agent_log.json` | Local execution log and status trail. |
+
+## Autonomy loop
+
+1. Discover signals relevant to the repo track and its overlap targets.
+2. Build a bounded plan with per-action and compute caps.
+3. Persist a dry-run artifact before any live execution.
+4. Enforce onchain policy through the guarded contract wrapper.
+5. Verify outputs, update receipts, and render submission material.
+
+## Security controls
+
+- Admin-managed allowlists for targets and selectors.
+- Per-action caps, daily caps, cooldown windows, and a principal floor.
+- Reporter-only receipt anchoring and proof attachment.
+- Env-only secrets; no committed private keys or partner tokens.
+- Pause switch plus dry-run-first execution flow.
 
 ## Action catalog
 
@@ -59,6 +87,18 @@ flowchart TD
 | `olas_market_hire` | Olas | Use Olas for a bounded action in this repo. | $20 | medium |
 | `uniswap_quote_route` | Uniswap | Use Uniswap for a bounded action in this repo. | $220 | medium |
 | `markee_repo_message` | Markee | Use Markee for a bounded action in this repo. | $5 | low |
+
+## Local terminal flow (Anvil + Sepolia)
+
+```bash
+export SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/YOUR_KEY
+anvil --fork-url "$SEPOLIA_RPC_URL" --chain-id 11155111
+cp .env.example .env
+# keep private keys only in .env; TODO.md stays local-only too
+forge script script/Deploy.s.sol --rpc-url "$RPC_URL" --broadcast
+python3 scripts/run_agent.py
+python3 scripts/render_submission.py
+```
 
 ## Commands
 
