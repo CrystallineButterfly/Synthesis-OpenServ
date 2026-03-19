@@ -5,7 +5,7 @@
 - **Category:** orchestration
 - **Primary contract:** `OpenServJobBoard`
 - **Primary module:** `openimpact_dispatcher`
-- **Submission status:** implementation ready, waiting for credentials and TxIDs.
+- **Submission status:** audited and offline-demo ready; optional live partner credentials unlock network execution.
 
 ## What this repo does
 
@@ -67,6 +67,32 @@ flowchart TD
 3. Persist a dry-run artifact before any live execution.
 4. Enforce onchain policy through the guarded contract wrapper.
 5. Verify outputs, update receipts, and render submission material.
+
+## Current readiness
+
+- **Latest verification:** `verified` at `2026-03-19T03:52:17+00:00`
+- **Execution mode:** `offline_prepared`
+- **Offline-prepared partners:** Filecoin (prepared_filecoin_bundle), ERC-8004 Receipts (prepared_contract_call)
+- **Live credential blockers:** OpenServ, Octant, Olas, Uniswap, Markee
+- **Audit docs:** `docs/audit.md`, `docs/live_readiness.md`
+
+## Most sensitive actions
+
+- `openserv_job_dispatch` (OpenServ, medium)
+- `octant_signal_publish` (Octant, medium)
+
+## Live blocker details
+
+- **OpenServ** — OPENSERV_API_KEY, OPENSERV_AGENT_URL — https://docs.openserv.ai/
+- **Octant** — OCTANT_SIGNAL_URL — https://octant.app/
+- **Olas** — OLAS_API_KEY, OLAS_REQUEST_URL — https://docs.olas.network/
+- **Uniswap** — UNISWAP_API_KEY, UNISWAP_QUOTE_URL — https://developers.uniswap.org/
+- **Markee** — MARKEE_API_KEY, MARKEE_MESSAGE_URL — https://markee.xyz/
+
+## Latest evidence artifacts
+
+- `artifacts/filecoin/0x7016652e0da7626f901b208324bf7e857e1911b2135f6ff23167c5702bb55d6c.json`
+- `artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json`
 
 ## Security controls
 
