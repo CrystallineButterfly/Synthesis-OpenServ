@@ -7,5 +7,579 @@
     "details": {
       "status": "ready_for_credentials"
     }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:17+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "problem_signal",
+          "description": "Discovery inputs used to detect a real opportunity.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Budget, caps, and cooldown policy state.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Dry-run and live execution bundle metadata.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and final verification digests.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:17+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan.",
+    "details": {
+      "plan_id": "0x622883b8fdd9ae01b28fa06e54f89958dbfff47a32dbc454cf41f8ee50981d05"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:17+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xc2ccc87dfde733c98d32d42c0af6a9fffff7585a42be18036b25e1c10df9e6d8"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:17+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Skipped live execution.",
+    "details": {
+      "missing_env": [
+        "FILECOIN_API_TOKEN",
+        "FILECOIN_UPLOAD_URL",
+        "MARKEE_API_KEY",
+        "MARKEE_MESSAGE_URL",
+        "OCTANT_SIGNAL_URL",
+        "OLAS_API_KEY",
+        "OLAS_REQUEST_URL",
+        "OPENSERV_AGENT_URL",
+        "OPENSERV_API_KEY",
+        "RPC_URL",
+        "UNISWAP_API_KEY",
+        "UNISWAP_QUOTE_URL"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:17+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "OpenImpact Dispatcher",
+      "track": "OpenServ",
+      "plan_id": "0x622883b8fdd9ae01b28fa06e54f89958dbfff47a32dbc454cf41f8ee50981d05",
+      "simulation_hash": "0xc2ccc87dfde733c98d32d42c0af6a9fffff7585a42be18036b25e1c10df9e6d8",
+      "execution_status": "awaiting_credentials",
+      "tx_ids": [],
+      "created_at": "2026-03-19T03:30:17+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:17+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "problem_signal",
+          "description": "Discovery inputs used to detect a real opportunity.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Budget, caps, and cooldown policy state.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Dry-run and live execution bundle metadata.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and final verification digests.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:17+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan.",
+    "details": {
+      "plan_id": "0x622883b8fdd9ae01b28fa06e54f89958dbfff47a32dbc454cf41f8ee50981d05"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:17+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xc2ccc87dfde733c98d32d42c0af6a9fffff7585a42be18036b25e1c10df9e6d8"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:17+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Skipped live execution.",
+    "details": {
+      "missing_env": [
+        "FILECOIN_API_TOKEN",
+        "FILECOIN_UPLOAD_URL",
+        "MARKEE_API_KEY",
+        "MARKEE_MESSAGE_URL",
+        "OCTANT_SIGNAL_URL",
+        "OLAS_API_KEY",
+        "OLAS_REQUEST_URL",
+        "OPENSERV_AGENT_URL",
+        "OPENSERV_API_KEY",
+        "RPC_URL",
+        "UNISWAP_API_KEY",
+        "UNISWAP_QUOTE_URL"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:17+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "OpenImpact Dispatcher",
+      "track": "OpenServ",
+      "plan_id": "0x622883b8fdd9ae01b28fa06e54f89958dbfff47a32dbc454cf41f8ee50981d05",
+      "simulation_hash": "0xc2ccc87dfde733c98d32d42c0af6a9fffff7585a42be18036b25e1c10df9e6d8",
+      "execution_status": "awaiting_credentials",
+      "tx_ids": [],
+      "created_at": "2026-03-19T03:30:17+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:39:23.678178+00:00",
+    "stage": "security_review",
+    "actor": "audit_pass",
+    "message": "Completed the shared hardening and offline-artifact audit pass.",
+    "details": {
+      "status": "audited_ready_pending_live_credentials",
+      "primary_contract": "OpenServJobBoard.sol"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:49:02+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "problem_signal",
+          "description": "Discovery inputs used to detect a real opportunity.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Budget, caps, and cooldown policy state.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Dry-run and live execution bundle metadata.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and final verification digests.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:49:02+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0xdb91857d8a9af8448748a0573da00046ad46f80f146dc76919834e14cf184ac0",
+      "action_count": 7
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:49:02+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x0157e774129ffaaa76c284e8323d11fbf5abbea8b32f791ce5941107618877c6"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:49:02+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "MARKEE_API_KEY",
+        "MARKEE_MESSAGE_URL",
+        "OCTANT_SIGNAL_URL",
+        "OLAS_API_KEY",
+        "OLAS_REQUEST_URL",
+        "OPENSERV_AGENT_URL",
+        "OPENSERV_API_KEY",
+        "UNISWAP_API_KEY",
+        "UNISWAP_QUOTE_URL"
+      ],
+      "artifact_count": 2
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:49:02+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "OpenImpact Dispatcher",
+      "track": "OpenServ",
+      "plan_id": "0xdb91857d8a9af8448748a0573da00046ad46f80f146dc76919834e14cf184ac0",
+      "simulation_hash": "0x0157e774129ffaaa76c284e8323d11fbf5abbea8b32f791ce5941107618877c6",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/filecoin/0xdb91857d8a9af8448748a0573da00046ad46f80f146dc76919834e14cf184ac0.json",
+        "artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json"
+      ],
+      "partner_statuses": {
+        "OpenServ": "awaiting_credentials",
+        "Octant": "awaiting_credentials",
+        "Filecoin": "prepared_filecoin_bundle",
+        "ERC-8004 Receipts": "prepared_contract_call",
+        "Olas": "awaiting_credentials",
+        "Uniswap": "awaiting_credentials",
+        "Markee": "awaiting_credentials"
+      },
+      "created_at": "2026-03-19T03:49:02+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:47+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "problem_signal",
+          "description": "Discovery inputs used to detect a real opportunity.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Budget, caps, and cooldown policy state.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Dry-run and live execution bundle metadata.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and final verification digests.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:47+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0x2c380a00eb8ab7dbd9f8b302d3d19c63c06d29140dc531fc0dfba5808a055923",
+      "action_count": 7
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:47+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xbeef74591373c4e3dcfb6b1d2dc8458a6182782b294e484e3a3572767da9d42c"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:47+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "MARKEE_API_KEY",
+        "MARKEE_MESSAGE_URL",
+        "OCTANT_SIGNAL_URL",
+        "OLAS_API_KEY",
+        "OLAS_REQUEST_URL",
+        "OPENSERV_AGENT_URL",
+        "OPENSERV_API_KEY",
+        "UNISWAP_API_KEY",
+        "UNISWAP_QUOTE_URL"
+      ],
+      "artifact_count": 2
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:47+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "OpenImpact Dispatcher",
+      "track": "OpenServ",
+      "plan_id": "0x2c380a00eb8ab7dbd9f8b302d3d19c63c06d29140dc531fc0dfba5808a055923",
+      "simulation_hash": "0xbeef74591373c4e3dcfb6b1d2dc8458a6182782b294e484e3a3572767da9d42c",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/filecoin/0x2c380a00eb8ab7dbd9f8b302d3d19c63c06d29140dc531fc0dfba5808a055923.json",
+        "artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json"
+      ],
+      "partner_statuses": {
+        "OpenServ": "awaiting_credentials",
+        "Octant": "awaiting_credentials",
+        "Filecoin": "prepared_filecoin_bundle",
+        "ERC-8004 Receipts": "prepared_contract_call",
+        "Olas": "awaiting_credentials",
+        "Uniswap": "awaiting_credentials",
+        "Markee": "awaiting_credentials"
+      },
+      "created_at": "2026-03-19T03:50:47+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:48+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "problem_signal",
+          "description": "Discovery inputs used to detect a real opportunity.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Budget, caps, and cooldown policy state.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Dry-run and live execution bundle metadata.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and final verification digests.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:48+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0xd1c47107c5a6836ef5685e3bef2df9f5482df56c40550610419c17e9627217fa",
+      "action_count": 7
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:48+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xcd2ac913e74fee07aecdd21078852fbf90339868e24e2b8f400a46db25253214"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:48+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "MARKEE_API_KEY",
+        "MARKEE_MESSAGE_URL",
+        "OCTANT_SIGNAL_URL",
+        "OLAS_API_KEY",
+        "OLAS_REQUEST_URL",
+        "OPENSERV_AGENT_URL",
+        "OPENSERV_API_KEY",
+        "UNISWAP_API_KEY",
+        "UNISWAP_QUOTE_URL"
+      ],
+      "artifact_count": 2
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:48+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "OpenImpact Dispatcher",
+      "track": "OpenServ",
+      "plan_id": "0xd1c47107c5a6836ef5685e3bef2df9f5482df56c40550610419c17e9627217fa",
+      "simulation_hash": "0xcd2ac913e74fee07aecdd21078852fbf90339868e24e2b8f400a46db25253214",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/filecoin/0xd1c47107c5a6836ef5685e3bef2df9f5482df56c40550610419c17e9627217fa.json",
+        "artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json"
+      ],
+      "partner_statuses": {
+        "OpenServ": "awaiting_credentials",
+        "Octant": "awaiting_credentials",
+        "Filecoin": "prepared_filecoin_bundle",
+        "ERC-8004 Receipts": "prepared_contract_call",
+        "Olas": "awaiting_credentials",
+        "Uniswap": "awaiting_credentials",
+        "Markee": "awaiting_credentials"
+      },
+      "created_at": "2026-03-19T03:51:48+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:17+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "problem_signal",
+          "description": "Discovery inputs used to detect a real opportunity.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Budget, caps, and cooldown policy state.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Dry-run and live execution bundle metadata.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and final verification digests.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:17+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0x7016652e0da7626f901b208324bf7e857e1911b2135f6ff23167c5702bb55d6c",
+      "action_count": 7
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:17+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x1fd342a671e3118a817a10cc4e7329cae6ea804a816173be9be2261482d109e3"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:17+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "MARKEE_API_KEY",
+        "MARKEE_MESSAGE_URL",
+        "OCTANT_SIGNAL_URL",
+        "OLAS_API_KEY",
+        "OLAS_REQUEST_URL",
+        "OPENSERV_AGENT_URL",
+        "OPENSERV_API_KEY",
+        "UNISWAP_API_KEY",
+        "UNISWAP_QUOTE_URL"
+      ],
+      "artifact_count": 2
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:17+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "OpenImpact Dispatcher",
+      "track": "OpenServ",
+      "plan_id": "0x7016652e0da7626f901b208324bf7e857e1911b2135f6ff23167c5702bb55d6c",
+      "simulation_hash": "0x1fd342a671e3118a817a10cc4e7329cae6ea804a816173be9be2261482d109e3",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/filecoin/0x7016652e0da7626f901b208324bf7e857e1911b2135f6ff23167c5702bb55d6c.json",
+        "artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json"
+      ],
+      "partner_statuses": {
+        "OpenServ": "awaiting_credentials",
+        "Octant": "awaiting_credentials",
+        "Filecoin": "prepared_filecoin_bundle",
+        "ERC-8004 Receipts": "prepared_contract_call",
+        "Olas": "awaiting_credentials",
+        "Uniswap": "awaiting_credentials",
+        "Markee": "awaiting_credentials"
+      },
+      "created_at": "2026-03-19T03:52:17+00:00"
+    }
   }
 ]
