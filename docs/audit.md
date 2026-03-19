@@ -43,6 +43,14 @@ when live network credentials are absent. Network-only partners still report mis
 `cast send` output is now parsed for `transactionHash` explicitly before falling back to the
 raw stdout payload.
 
+## Track-specific trust boundaries
+
+- primary wrapper contract: `OpenServJobBoard`
+- live-only partners: OpenServ, Octant, Olas, Uniswap, Markee
+- offline-prepared partners: Filecoin (prepared_filecoin_bundle), ERC-8004 Receipts (prepared_contract_call)
+- highest-sensitivity actions: none
+- latest verification artifact: `artifacts/verification/0x7016652e0da7626f901b208324bf7e857e1911b2135f6ff23167c5702bb55d6c.json`
+
 ## Current posture
 
 ### Good
